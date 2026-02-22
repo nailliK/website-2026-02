@@ -8,6 +8,10 @@ html, body {
   background-color: var(--color-white);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   opacity: 0;
 
