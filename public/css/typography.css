@@ -1,0 +1,48 @@
+* {
+  font-feature-settings: "kern" 1, "liga" 1, "swsh" 1;
+}
+
+html {
+  font-family: "Operator Mono SSm", monospace;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Campton", sans-serif;
+}
+
+h1, h2 {
+  font-size: calc(var(--font-size) * 6);
+  line-height: calc(var(--font-size) * 6);
+  word-spacing: 100vw;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+h3 {
+  font-size: calc(var(--font-size) * 2);
+  line-height: calc(var(--line-height) * 2);
+
+  margin-bottom: var(--gap);
+}
+
+p {
+  margin-bottom: var(--gap);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-pink);
+}
+
+@media screen and (max-width: 720px) {
+  h1, h2 {
+    font-size: calc(var(--font-size) * 4);
+    line-height: calc(var(--font-size) * 4);
+  }
+}

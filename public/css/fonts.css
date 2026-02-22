@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Campton';
+  src: url('../fonts/Campton/Campton-Book.otf') format('otf'),
+  url('../fonts/Campton/Campton-Book.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Campton';
+  src: url('../fonts/Campton/Campton-BookItalic.otf') format('otf'),
+  url('../fonts/Campton/Campton-BookItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Campton';
+  src: url('../fonts/Campton/Campton-Bold.otf') format('otf'),
+  url('../fonts/Campton/Campton-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Campton';
+  src: url('../fonts/Campton/Campton-BoldItalic.otf') format('otf'),
+  url('../fonts/Campton/Campton-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Operator Mono SSm';
+  src: url('../fonts/OperatorMonoSSM/OperatorMonoSSm-Book.otf') format('otf'),
+  url('../fonts/OperatorMonoSSM/OperatorMonoSSm-Book.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Operator Mono SSm';
+  src: url('../fonts/OperatorMonoSSM/OperatorMonoSSm-BookItalic.otf') format('otf'),
+  url('../fonts/OperatorMonoSSM/OperatorMonoSSm-BookItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Operator Mono SSm';
+  src: url('../fonts/OperatorMonoSSM/OperatorMonoSSm-Bold.otf') format('otf'),
+  url('../fonts/OperatorMonoSSM/OperatorMonoSSm-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Operator Mono SSm';
+  src: url('../fonts/OperatorMonoSSM/OperatorMonoSSm-BoldItalic.otf') format('otf'),
+  url('../fonts/OperatorMonoSSM/OperatorMonoSSm-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}

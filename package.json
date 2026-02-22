@@ -1,0 +1,14 @@
+{
+  "name": "02",
+  "packageManager": "yarn@4.9.2",
+  "scripts": {
+    "dev": "http-server -p 8080",
+    "serve": "http-server"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "prettier": "^3.8.1"
+  }
+}
