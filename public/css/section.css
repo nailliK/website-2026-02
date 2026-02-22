@@ -1,6 +1,6 @@
 section {
   scroll-margin-top: calc(var(--gap) * 3);
-  width: 100vw;
+  width: 100%;
   position: relative;
   z-index: 1;
 
