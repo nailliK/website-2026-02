@@ -6,6 +6,7 @@ html {
   font-family: "Operator Mono SSm", monospace;
   font-size: var(--font-size);
   line-height: var(--line-height);
+  color: var(--color-black);
 }
 
 h1, h2, h3, h4, h5, h6 {
