@@ -1,8 +1,6 @@
 const fps = 12;
-let resetSeconds = 60;
-let startTime;
-let currentTime;
-let nodes = [];
+let cells = [];
+let snapshots = [];
 const elementWidth = 32;
 let gridX = 0;
 let gridY = 0;
@@ -10,40 +8,60 @@ let container = null;
 let state = [];
 
 function populate() {
-  nodes = nodes.slice(0, gridX * gridY - 1);
+  cells = cells.slice(0, gridX * gridY - 1);
 
-  while (nodes.length < gridX * gridY) {
-    nodes.push(Math.round(Math.random()));
+  while (cells.length < gridX * gridY) {
+    cells.push(Math.round(Math.random()));
   }
 }
 
+function getCell(x, y) {
+  return state[y * gridX + x];
+}
+
 function snapshot() {
-  state = [...nodes];
+  state = [...cells];
 
   for (let i = 0; i < state.length; i++) {
     const col = i % gridX;
-    const tl = col > 0 ? state[i - gridX - 1] : 0;
-    const t = state[i - gridX] ?? 0;
-    const tr = col < gridX - 1 ? state[i - gridX + 1] : 0;
-    const r = col < gridX - 1 ? state[i + 1] : 0;
-    const br = col < gridX - 1 ? state[i + gridX + 1] : 0;
-    const b = state[i + gridX] ?? 0;
-    const bl = col > 0 ? state[i + gridX - 1] : 0;
-    const l = col > 0 ? state[i - 1] : 0;
+    const row = Math.floor(i / gridX);
+
+    const _x = col === 0 ? gridX - 1 : col - 1;
+    const x = col;
+    const x_ = col + 1 >= gridX ? 0 : col + 1;
+    const _y = row === 0 ? gridY - 1 : row - 1;
+    const y = row;
+    const y_ = row + 1 >= gridY ? 0 : row + 1;
+
+    const tl = getCell(_x, _y);
+    const t = getCell(x, _y);
+    const tr = getCell(x_, _y);
+    const r = getCell(x_, y);
+    const br = getCell(x_, y_);
+    const b = getCell(x, y_);
+    const bl = getCell(_x, y_);
+    const l = getCell(_x, y);
 
     const neighbors = tl + t + tr + r + br + b + bl + l;
 
     if (neighbors < 2) {
-      nodes[i] = 0;
+      cells[i] = 0;
     }
 
     if (neighbors > 3) {
-      nodes[i] = 0;
+      cells[i] = 0;
     }
 
     if (neighbors === 3) {
-      nodes[i] = 1;
+      cells[i] = 1;
     }
+  }
+
+  snapshots.push([...cells]);
+  snapshots = snapshots.slice(-3);
+  if (snapshots.length === 3 && JSON.stringify(snapshots[0]) === JSON.stringify(snapshots[2])) {
+    cells = [];
+    populate();
   }
 }
 
@@ -59,7 +77,7 @@ function render() {
   }
 
   for (n = 0; n < elements.length; n++) {
-    if (nodes[n] === 1) {
+    if (cells[n] === 1) {
       elements[n].className = 'active';
     } else {
       elements[n].className = '';
@@ -68,14 +86,6 @@ function render() {
 }
 
 function tick() {
-  currentTime = Date.now();
-
-  if (currentTime >= startTime + resetSeconds * 1000) {
-    startTime = Date.now();
-    nodes = [];
-    populate();
-  }
-
   snapshot();
   render();
 

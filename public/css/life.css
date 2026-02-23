@@ -15,7 +15,7 @@
     height: 100%;
     background-color: var(--color-grey-light);
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.25s;
 
     &.active {
       opacity: 1;

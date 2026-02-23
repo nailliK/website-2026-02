@@ -1,8 +1,7 @@
 section {
   scroll-margin-top: calc(var(--gap) * 3);
   width: 100%;
-  position: relative;
-  z-index: 1;
+
 
   header {
     display: flex;
@@ -11,6 +10,9 @@ section {
     text-align: left;
     padding: var(--gap);
     min-height: calc(100vh - var(--gap) * 3);
+    position: relative;
+    z-index: 1;
+    mix-blend-mode: multiply;
 
     h2 {
       span:nth-of-type(2n) {
@@ -24,10 +26,11 @@ section {
     flex-direction: column;
     justify-content: center;
     padding: var(--gap);
-    backdrop-filter: blur(8px);
     min-height: calc(100vh - var(--gap) * 3);
+    backdrop-filter: blur(calc(var(--gap) / 2));
+    position: relative;
+    z-index: 2;
   }
-
 
   &#home {
     header {
@@ -50,7 +53,6 @@ section {
     }
 
     div {
-      color: var(--color-black);
       align-items: center;
 
       svg {
