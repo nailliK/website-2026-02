@@ -8,5 +8,8 @@
   --color-blue: #2890FF;
   --font-size: 1rem;
   --line-height: 1.5rem;
+}
+
+:root {
   --gap: var(--line-height);
 }
