@@ -1,5 +1,5 @@
 const fps = 12;
-let resetSeconds = 15;
+let resetSeconds = 60;
 let startTime;
 let currentTime;
 let nodes = [];
