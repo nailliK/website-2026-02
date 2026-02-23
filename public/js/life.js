@@ -3,7 +3,7 @@ let resetSeconds = 15;
 let startTime;
 let currentTime;
 let nodes = [];
-const elementWidth = 24;
+const elementWidth = 32;
 let gridX = 0;
 let gridY = 0;
 let container = null;
